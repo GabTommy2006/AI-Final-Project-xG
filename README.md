@@ -1,4 +1,6 @@
-# Week 2 xG Pilot — Hướng dẫn chạy
+# xG AI Project — Week 2 pilot and Week 3 baseline
+
+Week 3 implementation and commands: [week3/README.md](week3/README.md). It runs separately and preserves the original Week 2 outputs below.
 
 ## 1. Phạm vi đúng của gói này
 
