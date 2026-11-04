@@ -1,0 +1,139 @@
+{
+  "status": "ACTUAL_COMPUTED_AUDIT",
+  "snapshot": {
+    "repository": "https://github.com/hudl/open-data",
+    "git_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+    "retrieved_utc": "2026-10-24T17:54:11.6232198Z",
+    "scope": "Premier League 2015/16 competition2 season27",
+    "selected_limit": 100
+  },
+  "python_version": "3.11.9",
+  "available_matches": 380,
+  "selected_matches": 100,
+  "all_matches_included": false,
+  "first_match_date": "2015-08-08",
+  "last_match_date": "2015-10-25",
+  "all_events": 342950,
+  "all_shots": 2647,
+  "goals_all_shots": 266,
+  "goal_rate_all_shots": 0.10049112202493389,
+  "nonpenalty_eligible_shots": 2628,
+  "nonpenalty_eligible_goals": 249,
+  "shot_types": {
+    "Open Play": 2507,
+    "Free Kick": 121,
+    "Penalty": 19
+  },
+  "body_parts": {
+    "Head": 420,
+    "Right Foot": 1471,
+    "Left Foot": 754,
+    "Other": 2
+  },
+  "periods": {
+    "1": 1206,
+    "2": 1441
+  },
+  "outcomes": {
+    "Off T": 830,
+    "Blocked": 778,
+    "Saved": 618,
+    "Saved Off Target": 14,
+    "Goal": 266,
+    "Wayward": 85,
+    "Post": 50,
+    "Saved to Post": 6
+  },
+  "duplicates": {
+    "all_event_duplicate_id_values": 0,
+    "all_event_excess_duplicate_rows": 0,
+    "shot_duplicate_id_values": 0,
+    "shot_excess_duplicate_rows": 0,
+    "all_event_missing_ids": 0
+  },
+  "missing": {
+    "event_id": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "x": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "y": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "body_part": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "shot_type": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "play_pattern": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "technique": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "outcome": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "player": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "team": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    },
+    "provider_xg_reference_only": {
+      "missing": 0,
+      "denominator_all_shots": 2647,
+      "percent": 0.0
+    }
+  },
+  "optional_boolean_qualifiers": {
+    "under_pressure_raw": {
+      "absent": 2119,
+      "explicit_true": 528,
+      "explicit_false": 0,
+      "explicit_null": 0,
+      "denominator_all_shots": 2647,
+      "interpretation": "Optional qualifier; absence differs from an observed explicit false. Preserve presence flag; not used as model feature."
+    },
+    "first_time_raw": {
+      "absent": 1930,
+      "explicit_true": 717,
+      "explicit_false": 0,
+      "explicit_null": 0,
+      "denominator_all_shots": 2647,
+      "interpretation": "Optional qualifier; absence differs from an observed explicit false. Preserve presence flag; not used as model feature."
+    }
+  },
+  "invalid_locations": 0,
+  "freeze_frame_present_count": 2630,
+  "filter": "Only type=Shot. Baseline excludes Penalty, period outside1-4, invalid location, missing outcome or shot_type. Own Goal events are not Shot events.",
+  "bias_risks": [
+    "One historic English elite mens league season; do not infer transfer to womens, youth or Vietnamese football.",
+    "If pilot subset, earliest matches only is not representative of a full season; label as pilot.",
+    "Only actions where a shot was taken; not a model of all attacking situations.",
+    "Goal minority class; probability metrics and calibration required.",
+    "Provider definitions and limited visible-player freeze frames affect measurement."
+  ]
+}

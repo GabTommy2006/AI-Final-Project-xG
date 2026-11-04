@@ -1,0 +1,252 @@
+{
+  "status": "ACTUAL_PRELIMINARY_BASELINE",
+  "features": [
+    "distance_sb_units",
+    "angle_rad"
+  ],
+  "feature_geometry": "StatsBomb coordinate system120x80; goal center(120,40),posts(120,36),(120,44); not metric distance.",
+  "split_policy": "Chronological(match_date,match_id),match-disjoint60/20/20; dates can coincide across boundaries.",
+  "split_counts": {
+    "train": {
+      "matches": 60,
+      "shots": 1586,
+      "goals": 131,
+      "first_date": "2015-08-08",
+      "last_date": "2015-09-20"
+    },
+    "validation": {
+      "matches": 20,
+      "shots": 556,
+      "goals": 67,
+      "first_date": "2015-09-26",
+      "last_date": "2015-10-04"
+    },
+    "test": {
+      "matches": 20,
+      "shots": 486,
+      "goals": 51,
+      "first_date": "2015-10-17",
+      "last_date": "2015-10-25"
+    }
+  },
+  "model": "Logistic regression, fixed L2 coefficient penalty1, unpenalized intercept; features standardized using train only.",
+  "no_leakage": "No outcomes, provider xG, end_location, shot-on-target, future events or test-fitted preprocessing in inputs.",
+  "optimization": {
+    "method": "Newton with backtracking",
+    "converged": true,
+    "iterations": 6
+  },
+  "numpy_version": "2.3.5",
+  "coefficients_intercept_distance_angle": [
+    -2.735317226350784,
+    -0.867413647314052,
+    0.07126994756099894
+  ],
+  "train_feature_mean": [
+    19.600606770552847,
+    0.42538354350644675
+  ],
+  "train_feature_std_population": [
+    8.19306082926326,
+    0.2565812980297204
+  ],
+  "evaluation": {
+    "train": {
+      "constant_train_rate": {
+        "shots": 1586,
+        "goals": 131,
+        "goal_rate": 0.08259773013871374,
+        "mean_prediction": 0.08259773013871374,
+        "log_loss": 0.2850685322922155,
+        "brier_score": 0.07577534511464595,
+        "roc_auc": 0.5,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 1586,
+            "mean_probability": 0.08259773013871374,
+            "goal_rate": 0.08259773013871374
+          }
+        ]
+      },
+      "logistic_distance_angle": {
+        "shots": 1586,
+        "goals": 131,
+        "goal_rate": 0.08259773013871374,
+        "mean_prediction": 0.08259773013871374,
+        "log_loss": 0.2579994376286014,
+        "brier_score": 0.07162454003221458,
+        "roc_auc": 0.7366648304084363,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 1104,
+            "mean_probability": 0.04543049436698253,
+            "goal_rate": 0.04528985507246377
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "shots": 374,
+            "mean_probability": 0.1452584263538861,
+            "goal_rate": 0.1497326203208556
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "shots": 96,
+            "mean_probability": 0.23366376175062378,
+            "goal_rate": 0.20833333333333334
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "shots": 11,
+            "mean_probability": 0.3321548930937727,
+            "goal_rate": 0.36363636363636365
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "shots": 1,
+            "mean_probability": 0.4326578104065072,
+            "goal_rate": 1.0
+          }
+        ]
+      }
+    },
+    "validation": {
+      "constant_train_rate": {
+        "shots": 556,
+        "goals": 67,
+        "goal_rate": 0.12050359712230216,
+        "mean_prediction": 0.08259773013871374,
+        "log_loss": 0.3763293275875774,
+        "brier_score": 0.10741933495466553,
+        "roc_auc": 0.5,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 556,
+            "mean_probability": 0.08259773013871374,
+            "goal_rate": 0.12050359712230216
+          }
+        ]
+      },
+      "logistic_distance_angle": {
+        "shots": 556,
+        "goals": 67,
+        "goal_rate": 0.12050359712230216,
+        "mean_prediction": 0.08507673642450661,
+        "log_loss": 0.3357149269427962,
+        "brier_score": 0.09762286519746183,
+        "roc_auc": 0.7362421023715777,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 386,
+            "mean_probability": 0.046060131555205386,
+            "goal_rate": 0.06476683937823834
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "shots": 124,
+            "mean_probability": 0.143967025770802,
+            "goal_rate": 0.20967741935483872
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "shots": 35,
+            "mean_probability": 0.23265492879099092,
+            "goal_rate": 0.2857142857142857
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "shots": 11,
+            "mean_probability": 0.3207837244047525,
+            "goal_rate": 0.5454545454545454
+          }
+        ]
+      }
+    },
+    "test": {
+      "constant_train_rate": {
+        "shots": 486,
+        "goals": 51,
+        "goal_rate": 0.10493827160493827,
+        "mean_prediction": 0.08259773013871373,
+        "log_loss": 0.33885481245880233,
+        "brier_score": 0.09442533055051056,
+        "roc_auc": 0.5,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 486,
+            "mean_probability": 0.08259773013871373,
+            "goal_rate": 0.10493827160493827
+          }
+        ]
+      },
+      "logistic_distance_angle": {
+        "shots": 486,
+        "goals": 51,
+        "goal_rate": 0.10493827160493827,
+        "mean_prediction": 0.08842319159283628,
+        "log_loss": 0.27394048691133815,
+        "brier_score": 0.08047283367387419,
+        "roc_auc": 0.8114491773720983,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "shots": 321,
+            "mean_probability": 0.042765517693137745,
+            "goal_rate": 0.03115264797507788
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "shots": 124,
+            "mean_probability": 0.14937447648883506,
+            "goal_rate": 0.18548387096774194
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "shots": 32,
+            "mean_probability": 0.23687092822166986,
+            "goal_rate": 0.3125
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "shots": 7,
+            "mean_probability": 0.33011994817863977,
+            "goal_rate": 0.8571428571428571
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "shots": 2,
+            "mean_probability": 0.4163977548308727,
+            "goal_rate": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "No hyperparameter search performed; fixed transparent baseline.",
+    "Single-season within-league evaluation; not prospective or cross-league validation.",
+    "Finite pilot sample is preliminary; no claim of statistical superiority.",
+    "Brier and log loss mix calibration and discrimination; inspect calibration bins as well."
+  ]
+}

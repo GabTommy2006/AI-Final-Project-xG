@@ -1,0 +1,16 @@
+{
+  "checks": "passed",
+  "arithmetic_reconciliation": true,
+  "match_disjoint_splits": true,
+  "train_only_standardization": true,
+  "objective_gradient_max_abs": 8.215650382226158e-15,
+  "geometry_vector_angle_max_difference_rad": 3.7921055184853e-15,
+  "pairwise_test_auc": 0.8114491773720983,
+  "test_probability_range": [
+    0.000952747324665291,
+    0.4178439249716609
+  ],
+  "penalty_shots": 19,
+  "penalty_goals": 17,
+  "warning": "Pilot only; test labels now inspected, so final untouched holdout must use different later matches."
+}

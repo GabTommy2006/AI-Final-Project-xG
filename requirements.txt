@@ -1,0 +1,2 @@
+# Phiên bản dùng cho pilot đã chạy.
+numpy==2.3.5
