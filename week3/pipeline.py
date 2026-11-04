@@ -3,12 +3,14 @@ import argparse
 from collections import Counter
 import csv
 import hashlib
+import gzip
 import json
 import math
 from pathlib import Path
 import platform
 
 import numpy as np
+from scope import eligible_match
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,10 +44,13 @@ def sigmoid(z):
 def metrics(y, p):
     p = np.asarray(p)
     c = np.clip(p, 1e-12, 1 - 1e-12)
-    positive, negative = p[y == 1], p[y == 0]
-    # Pairwise definition also handles probability ties correctly.
-    auc = float(np.mean([(np.sum(a > negative) + .5 * np.sum(a == negative)) /
-                         len(negative) for a in positive])) if len(positive) and len(negative) else None
+    # Mann-Whitney rank statistic, O(n log n), with averaged ranks for ties.
+    order = np.argsort(p, kind='stable')
+    _, start, counts = np.unique(p[order], return_index=True, return_counts=True)
+    ranks = np.empty(len(p))
+    ranks[order] = np.repeat(start + (counts+1)/2, counts)
+    positives, negatives = int(y.sum()), len(y)-int(y.sum())
+    auc = float((ranks[y == 1].sum()-positives*(positives+1)/2)/(positives*negatives)) if positives and negatives else None
     bins = []
     for k in range(10):
         mask = (p >= k / 10) & (p < (k + 1) / 10 if k < 9 else p <= 1)
@@ -97,30 +102,25 @@ def predict(model, features):
     return sigmoid(x@np.array(model['beta']))
 
 
-def run(matches_path, raw_path, output):
+def run(matches_path, raw_path, output, source_manifest=None, source_snapshot=None):
     output.mkdir(parents=True, exist_ok=True)
     matches = sorted(read(matches_path), key=lambda m: (m['match_date'], m['match_id']))
     if len(matches) < 5 or len({m['match_id'] for m in matches}) != len(matches):
         raise ValueError('Need at least five distinct matches')
-    # Current verified execution uses the Week 2 EPL manifest, within the agreed scope.
-    # An expanded manifest must be curated to European competitions or FIFA World Cup.
-    european_countries = {'England', 'Spain', 'Germany', 'Italy', 'France', 'Portugal',
-                          'Netherlands', 'Belgium', 'Scotland', 'Wales', 'Northern Ireland',
-                          'Republic of Ireland', 'Austria', 'Switzerland', 'Denmark', 'Sweden',
-                          'Norway', 'Finland', 'Greece', 'Poland', 'Croatia', 'Serbia',
-                          'Turkey', 'Russia', 'Ukraine', 'Czech Republic', 'Romania'}
     for m in matches:
-        comp = m['competition']
-        european = comp.get('country_name') in european_countries or comp['competition_name'].startswith('UEFA ')
-        if not (european or comp['competition_name'] == 'FIFA World Cup'):
-            raise ValueError(f"Outside supported scope: {comp}")
-        if m['match_date'] <= '2000-12-31' or any(m[t].get(f'{t}_gender') != 'male' for t in ['home_team', 'away_team']):
-            raise ValueError('Only men, match dates from 2001 onward')
+        if not eligible_match(m):
+            raise ValueError(f"Outside scope: {m['match_id']}")
     rows, seen, manifest, counts = [], set(), [], Counter()
-    reference_hashes = {r['match_id']: r['sha256'] for r in read(ROOT/'source_manifest.json')}
-    for m in matches:
+    reference_hashes = {r['match_id']: r['sha256'] for r in read(source_manifest or ROOT/'source_manifest.json')}
+    if source_manifest and set(reference_hashes) != {m['match_id'] for m in matches}:
+        raise ValueError('Source manifest and selected matches differ')
+    snapshot = read(source_snapshot) if source_snapshot else None
+    if snapshot and snapshot.get('selected_matches_sha256') != hashlib.sha256(matches_path.read_bytes()).hexdigest():
+        raise ValueError('Selected match manifest checksum mismatch')
+    for match_index, m in enumerate(matches, 1):
         mid = m['match_id']
-        payload = (raw_path / f'events_{mid}.json').read_bytes()
+        path = raw_path / f'events_{mid}.json'
+        payload = path.read_bytes() if path.exists() else gzip.decompress(path.with_suffix('.json.gz').read_bytes())
         if mid in reference_hashes and hashlib.sha256(payload).hexdigest() != reference_hashes[mid]:
             raise ValueError(f'Source checksum mismatch for match {mid}')
         manifest.append(dict(match_id=mid, sha256=hashlib.sha256(payload).hexdigest()))
@@ -158,8 +158,13 @@ def run(matches_path, raw_path, output):
                 continue
             distance, angle = geometry(*loc[:2])
             rows.append(dict(event_id=eid, match_id=mid, match_date=m['match_date'],
+                             competition=m['competition']['competition_name'], season=m['season']['season_name'] if 'season' in m else 'unknown',
                              x=loc[0], y=loc[1], distance_sb_units=distance, angle_rad=angle,
+                             body_part=label(shot.get('body_part')), shot_type=label(shot.get('type')),
+                             play_pattern=label(e.get('play_pattern')), technique=label(shot.get('technique')),
                              goal=int(label(shot['outcome']) == 'Goal')))
+        if match_index % 250 == 0 or match_index == len(matches):
+            print(f'Processed {match_index}/{len(matches)} matches; retained {len(rows)} shots', flush=True)
     cut1, cut2 = int(len(matches)*.6), int(len(matches)*.8)
     split = dict(train=matches[:cut1], validation=matches[cut1:cut2], test=matches[cut2:])
     membership = {m['match_id']: s for s, ms in split.items() for m in ms}
@@ -185,13 +190,20 @@ def run(matches_path, raw_path, output):
     save(output/'model.json', model)
     save(output/'metrics.json', evaluation)
     save(output/'split_matches.json', {s: [m['match_id'] for m in ms] for s, ms in split.items()})
+    save(output/'split_summary.json', {s: dict(matches=len(ms), shots=len(sets[s]), goals=int(targets[s].sum()),
+         first_date=ms[0]['match_date'], last_date=ms[-1]['match_date'],
+         competitions=dict(Counter(m['competition']['competition_name'] for m in ms))) for s, ms in split.items()})
+    save(output/'competition_metrics.json', {s: {comp: metrics(
+         np.array([r['goal'] for r in rs if r['competition'] == comp]),
+         np.array([r['xg'] for r in rs if r['competition'] == comp]))
+         for comp in sorted({r['competition'] for r in rs})} for s, rs in sets.items()})
     save(output/'data_audit.json', dict(counts=counts, retained_shots=len(rows),
          goals=sum(r['goal'] for r in rows), selected_matches=len(matches),
          first_date=matches[0]['match_date'], last_date=matches[-1]['match_date'],
          competitions=sorted({m['competition']['competition_name'] for m in matches}),
          exclusion_policy='First applicable reason; duplicate Shot IDs fail the run',
-         source_snapshot=read(ROOT/'snapshot.json') if matches_path.resolve() == (ROOT/'selected_matches.json').resolve() else None,
-         provenance_note='Known pilot event hashes verified; expanded sources need their own pinned manifest.',
+         source_snapshot=snapshot or (read(ROOT/'snapshot.json') if matches_path.resolve() == (ROOT/'selected_matches.json').resolve() else None),
+         provenance_note='Every selected event hash verified against source manifest.' if source_manifest else 'Known pilot hashes checked.',
          source_manifest=manifest,
          match_manifest_sha256=hashlib.sha256(matches_path.read_bytes()).hexdigest(),
          python=platform.python_version(), numpy=np.__version__))
@@ -200,8 +212,10 @@ def run(matches_path, raw_path, output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--matches', type=Path, default=ROOT/'selected_matches.json')
-    parser.add_argument('--raw', type=Path, default=ROOT/'raw')
+    parser.add_argument('--matches', type=Path, default=ROOT/'week3/data/selected_matches.json')
+    parser.add_argument('--raw', type=Path, default=ROOT/'raw/week3')
+    parser.add_argument('--source-manifest', type=Path, default=ROOT/'week3/data/source_manifest.json')
+    parser.add_argument('--source-snapshot', type=Path, default=ROOT/'week3/data/snapshot.json')
     parser.add_argument('--output', type=Path, default=ROOT/'week3/results')
     args = parser.parse_args()
-    run(args.matches, args.raw, args.output)
+    run(args.matches, args.raw, args.output, args.source_manifest, args.source_snapshot)

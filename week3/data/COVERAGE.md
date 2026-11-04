@@ -1,0 +1,47 @@
+# Available in-scope coverage at the pinned source revision
+
+Counts are available public matches, not a claim of full-season coverage.
+
+- 1. Bundesliga — 2015/2016: 34 matches (2015-08-15 to 2016-05-14).
+- 1. Bundesliga — 2023/2024: 34 matches (2023-08-19 to 2024-05-18).
+- Champions League — 2003/2004: 1 matches (2004-05-26 to 2004-05-26).
+- Champions League — 2004/2005: 1 matches (2005-05-25 to 2005-05-25).
+- Champions League — 2006/2007: 1 matches (2007-05-23 to 2007-05-23).
+- Champions League — 2008/2009: 1 matches (2009-05-27 to 2009-05-27).
+- Champions League — 2009/2010: 1 matches (2010-05-22 to 2010-05-22).
+- Champions League — 2010/2011: 1 matches (2011-05-28 to 2011-05-28).
+- Champions League — 2011/2012: 1 matches (2012-05-19 to 2012-05-19).
+- Champions League — 2012/2013: 1 matches (2013-05-25 to 2013-05-25).
+- Champions League — 2013/2014: 1 matches (2014-05-24 to 2014-05-24).
+- Champions League — 2014/2015: 1 matches (2015-06-06 to 2015-06-06).
+- Champions League — 2015/2016: 1 matches (2016-05-28 to 2016-05-28).
+- Champions League — 2016/2017: 1 matches (2017-06-03 to 2017-06-03).
+- Champions League — 2017/2018: 1 matches (2018-05-26 to 2018-05-26).
+- Champions League — 2018/2019: 1 matches (2019-06-01 to 2019-06-01).
+- FIFA World Cup — 2018: 64 matches (2018-06-14 to 2018-07-15).
+- FIFA World Cup — 2022: 64 matches (2022-11-20 to 2022-12-18).
+- La Liga — 2004/2005: 7 matches (2004-10-16 to 2005-05-01).
+- La Liga — 2005/2006: 17 matches (2005-10-01 to 2006-02-25).
+- La Liga — 2006/2007: 26 matches (2006-08-28 to 2007-06-17).
+- La Liga — 2007/2008: 27 matches (2007-08-26 to 2008-05-17).
+- La Liga — 2008/2009: 31 matches (2008-08-31 to 2009-05-10).
+- La Liga — 2009/2010: 35 matches (2009-09-12 to 2010-05-16).
+- La Liga — 2010/2011: 33 matches (2010-08-29 to 2011-05-11).
+- La Liga — 2011/2012: 37 matches (2011-08-29 to 2012-05-12).
+- La Liga — 2012/2013: 32 matches (2012-08-19 to 2013-05-12).
+- La Liga — 2013/2014: 31 matches (2013-08-18 to 2014-05-17).
+- La Liga — 2014/2015: 38 matches (2014-08-24 to 2015-05-23).
+- La Liga — 2015/2016: 380 matches (2015-08-21 to 2016-05-15).
+- La Liga — 2016/2017: 34 matches (2016-08-20 to 2017-05-21).
+- La Liga — 2017/2018: 36 matches (2017-08-20 to 2018-05-20).
+- La Liga — 2018/2019: 34 matches (2018-08-18 to 2019-05-19).
+- La Liga — 2019/2020: 33 matches (2019-09-21 to 2020-07-19).
+- La Liga — 2020/2021: 35 matches (2020-09-27 to 2021-05-16).
+- Ligue 1 — 2015/2016: 377 matches (2015-08-07 to 2016-05-14).
+- Ligue 1 — 2021/2022: 26 matches (2021-08-29 to 2022-05-21).
+- Ligue 1 — 2022/2023: 32 matches (2022-08-06 to 2023-06-03).
+- Premier League — 2003/2004: 38 matches (2003-08-16 to 2004-05-15).
+- Premier League — 2015/2016: 380 matches (2015-08-08 to 2016-05-17).
+- Serie A — 2015/2016: 380 matches (2015-08-22 to 2016-05-15).
+- UEFA Euro — 2020: 51 matches (2021-06-11 to 2021-07-11).
+- UEFA Euro — 2024: 51 matches (2024-06-14 to 2024-07-14).

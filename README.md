@@ -2,6 +2,8 @@
 
 Week 3 implementation and commands: [week3/README.md](week3/README.md). It runs separately and preserves the original Week 2 outputs below.
 
+Week 3 now selects all available senior men's European competition and FIFA World Cup matches dated from 2001 onward at the pinned source revision. Download with `week3/download_scope.py`, then run `week3/pipeline.py`. Exact coverage and current results are documented in [coverage](week3/data/COVERAGE.md) and [baseline results](week3/results/SUMMARY.md).
+
 ## 1. Phạm vi đúng của gói này
 
 Đây là code tạo ra số liệu pilot trong slide tuần 2: 100 trận đầu theo (match_date, match_id) của Premier League 2015/16, ngày 08/08–25/10/2015. Snapshot nguồn đã cố định trong snapshot.json. Gói này CHƯA chạy phạm vi mới gồm nhiều giải châu Âu và World Cup. Không đổi bộ lọc rồi tiếp tục dùng số liệu cũ trên slide.
