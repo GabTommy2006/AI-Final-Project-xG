@@ -1,0 +1,32 @@
+{
+  "model": "logistic_context_C10",
+  "intercept": -1.2944673235748605,
+  "coefficient_units": "Numeric slopes use train-standardized inputs; context slopes use one-hot indicators. Associations, not causal effects.",
+  "coefficients": {
+    "numeric__x0": -1.0513453759243958,
+    "numeric__x1": 0.46206808021300005,
+    "context__x2_Head": -0.9946836462692656,
+    "context__x2_Left Foot": 0.4928569634578324,
+    "context__x2_Other": -0.08120809966539148,
+    "context__x2_Right Foot": 0.582118267094744,
+    "context__x3_Corner": 2.6067094856913653,
+    "context__x3_Free Kick": -0.7796108543568124,
+    "context__x3_Open Play": -1.8280151467166963,
+    "context__x4_From Corner": -0.5615022000782144,
+    "context__x4_From Counter": 0.39803963846233414,
+    "context__x4_From Free Kick": -0.09557270624044722,
+    "context__x4_From Goal Kick": -0.02791141712101019,
+    "context__x4_From Keeper": -0.06327863434005133,
+    "context__x4_From Kick Off": -0.05427418450303088,
+    "context__x4_From Throw In": -0.09500921933654823,
+    "context__x4_Other": 0.4304565063922412,
+    "context__x4_Regular Play": 0.06813570138179982,
+    "context__x5_Backheel": -1.239397265772516,
+    "context__x5_Diving Header": 1.2568981656257943,
+    "context__x5_Half Volley": -0.30311013941353543,
+    "context__x5_Lob": 1.4639047753360444,
+    "context__x5_Normal": 0.28159524049292617,
+    "context__x5_Overhead Kick": -1.170672454515615,
+    "context__x5_Volley": -0.2901348371351118
+  }
+}

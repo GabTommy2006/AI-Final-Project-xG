@@ -10,3 +10,4 @@ raw/
 .ipynb_checkpoints/
 .DS_Store
 Thumbs.db
+week3/data/matches_*.json

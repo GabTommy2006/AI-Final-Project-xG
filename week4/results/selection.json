@@ -1,0 +1,18 @@
+{
+  "selected_id": "logistic_context_C10",
+  "params": {
+    "C": 10.0
+  },
+  "family": "logistic_context",
+  "selected_by": "validation_log_loss",
+  "validation_log_loss": 0.2723751499398945,
+  "family_winners": {
+    "logistic_context": "logistic_context_C10",
+    "forest_geometry": "forest_geometry_depth6_leaf20",
+    "forest_context": "forest_context_depthNone_leaf20"
+  },
+  "selected_utc": "2026-11-11T18:03:50.803396+00:00",
+  "test_used_for_selection": false,
+  "refit_on_train_plus_validation": false,
+  "baseline_input_sha256": "02e4cbe6267022557de152fba687091c58372348254ac8572acb1531ea90687a"
+}

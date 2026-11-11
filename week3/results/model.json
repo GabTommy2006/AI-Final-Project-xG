@@ -1,0 +1,24 @@
+{
+  "mean": [
+    19.75114899622435,
+    0.42933708310809715
+  ],
+  "scale": [
+    8.844089091645928,
+    0.2700718762381154
+  ],
+  "beta": [
+    -2.520333586665338,
+    -0.6606240102594153,
+    0.3370161627508408
+  ],
+  "train_goal_rate": 0.10118394780505638,
+  "iterations": 6,
+  "converged": true,
+  "features": [
+    "distance_sb_units",
+    "angle_rad"
+  ],
+  "l2_penalty": 1.0,
+  "intercept_penalized": false
+}

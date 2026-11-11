@@ -1,0 +1,47 @@
+{
+  "train": {
+    "matches": 1446,
+    "shots": 35559,
+    "goals": 3598,
+    "first_date": "2003-08-16",
+    "last_date": "2016-02-28",
+    "competitions": {
+      "Premier League": 306,
+      "Champions League": 10,
+      "La Liga": 573,
+      "Ligue 1": 273,
+      "1. Bundesliga": 22,
+      "Serie A": 262
+    }
+  },
+  "validation": {
+    "matches": 482,
+    "shots": 11909,
+    "goals": 1197,
+    "first_date": "2016-02-28",
+    "last_date": "2017-01-08",
+    "competitions": {
+      "La Liga": 135,
+      "Serie A": 118,
+      "1. Bundesliga": 12,
+      "Ligue 1": 104,
+      "Premier League": 112,
+      "Champions League": 1
+    }
+  },
+  "test": {
+    "matches": 483,
+    "shots": 12051,
+    "goals": 1279,
+    "first_date": "2017-01-14",
+    "last_date": "2024-07-14",
+    "competitions": {
+      "La Liga": 158,
+      "Champions League": 3,
+      "FIFA World Cup": 128,
+      "UEFA Euro": 102,
+      "Ligue 1": 58,
+      "1. Bundesliga": 34
+    }
+  }
+}
