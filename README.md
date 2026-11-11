@@ -1,8 +1,10 @@
-# xG AI Project — Week 2 pilot and Week 3 baseline
+# xG AI Project — Week 2 pilot, Week 3 baseline and Week 4 models
 
 Week 3 implementation and commands: [week3/README.md](week3/README.md). It runs separately and preserves the original Week 2 outputs below.
 
 Week 3 now selects all available senior men's European competition and FIFA World Cup matches dated from 2001 onward at the pinned source revision. Download with `week3/download_scope.py`, then run `week3/pipeline.py`. Exact coverage and current results are documented in [coverage](week3/data/COVERAGE.md) and [baseline results](week3/results/SUMMARY.md).
+
+Week 4 model comparison, inference and verified results: [week4/README.md](week4/README.md) and [experiment report](week4/results/SUMMARY.md).
 
 ## 1. Phạm vi đúng của gói này
 

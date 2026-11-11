@@ -1,0 +1,157 @@
+{
+  "created_utc": "2026-11-11T18:03:06.999099+00:00",
+  "seed": 2026,
+  "input_sha256": "02e4cbe6267022557de152fba687091c58372348254ac8572acb1531ea90687a",
+  "week3_split_sha256": "5a550b1aa844c50e8cae1eb52c3cccaab1fba97b5208fa3b15371819b05814c8",
+  "numeric_features": [
+    "distance_sb_units",
+    "angle_rad"
+  ],
+  "categorical_features": [
+    "body_part",
+    "shot_type",
+    "play_pattern",
+    "technique"
+  ],
+  "candidates": [
+    {
+      "id": "logistic_context_C0.1",
+      "family": "logistic_context",
+      "params": {
+        "C": 0.1
+      }
+    },
+    {
+      "id": "logistic_context_C1",
+      "family": "logistic_context",
+      "params": {
+        "C": 1.0
+      }
+    },
+    {
+      "id": "logistic_context_C10",
+      "family": "logistic_context",
+      "params": {
+        "C": 10.0
+      }
+    },
+    {
+      "id": "forest_geometry_depth6_leaf20",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": 6,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_geometry_depth6_leaf50",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": 6,
+        "min_samples_leaf": 50
+      }
+    },
+    {
+      "id": "forest_geometry_depth10_leaf20",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": 10,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_geometry_depth10_leaf50",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": 10,
+        "min_samples_leaf": 50
+      }
+    },
+    {
+      "id": "forest_geometry_depthNone_leaf20",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_geometry_depthNone_leaf50",
+      "family": "forest_geometry",
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 50
+      }
+    },
+    {
+      "id": "forest_context_depth6_leaf20",
+      "family": "forest_context",
+      "params": {
+        "max_depth": 6,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_context_depth6_leaf50",
+      "family": "forest_context",
+      "params": {
+        "max_depth": 6,
+        "min_samples_leaf": 50
+      }
+    },
+    {
+      "id": "forest_context_depth10_leaf20",
+      "family": "forest_context",
+      "params": {
+        "max_depth": 10,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_context_depth10_leaf50",
+      "family": "forest_context",
+      "params": {
+        "max_depth": 10,
+        "min_samples_leaf": 50
+      }
+    },
+    {
+      "id": "forest_context_depthNone_leaf20",
+      "family": "forest_context",
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 20
+      }
+    },
+    {
+      "id": "forest_context_depthNone_leaf50",
+      "family": "forest_context",
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 50
+      }
+    }
+  ],
+  "selection": "Lowest validation Log Loss; then Brier; then ID. Frozen Week 3 baseline may win.",
+  "test_policy": "No candidate is scored on test until selection.json is written. Week 3 test already inspected.",
+  "fixed_forest_settings": {
+    "n_estimators": 200,
+    "criterion": "gini",
+    "bootstrap": true,
+    "max_features": "sqrt",
+    "n_jobs": 2
+  },
+  "logistic_objective": "scikit-learn L2 LogisticRegression, unpenalized intercept, C as inverse regularization; baseline parity checked",
+  "reporting_log_loss_clip": 1e-12,
+  "class_weight": null,
+  "oversampling": false,
+  "python": "3.11.9",
+  "versions": {
+    "numpy": "2.3.5",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.3",
+    "joblib": "1.5.2",
+    "matplotlib": "3.10.7",
+    "threadpoolctl": "3.6.0"
+  }
+}

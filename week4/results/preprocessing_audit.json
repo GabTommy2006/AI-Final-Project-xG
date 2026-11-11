@@ -1,0 +1,180 @@
+{
+  "train_feature_mean": [
+    19.75114899622416,
+    0.4293370831080953
+  ],
+  "train_feature_scale": [
+    8.844089091645936,
+    0.27007187623811496
+  ],
+  "categories": {
+    "train": {
+      "body_part": {
+        "missing": 0,
+        "values": [
+          "Head",
+          "Left Foot",
+          "Other",
+          "Right Foot"
+        ]
+      },
+      "shot_type": {
+        "missing": 0,
+        "values": [
+          "Corner",
+          "Free Kick",
+          "Open Play"
+        ]
+      },
+      "play_pattern": {
+        "missing": 0,
+        "values": [
+          "From Corner",
+          "From Counter",
+          "From Free Kick",
+          "From Goal Kick",
+          "From Keeper",
+          "From Kick Off",
+          "From Throw In",
+          "Other",
+          "Regular Play"
+        ]
+      },
+      "technique": {
+        "missing": 0,
+        "values": [
+          "Backheel",
+          "Diving Header",
+          "Half Volley",
+          "Lob",
+          "Normal",
+          "Overhead Kick",
+          "Volley"
+        ]
+      }
+    },
+    "validation": {
+      "body_part": {
+        "missing": 0,
+        "values": [
+          "Head",
+          "Left Foot",
+          "Other",
+          "Right Foot"
+        ]
+      },
+      "shot_type": {
+        "missing": 0,
+        "values": [
+          "Corner",
+          "Free Kick",
+          "Open Play"
+        ]
+      },
+      "play_pattern": {
+        "missing": 0,
+        "values": [
+          "From Corner",
+          "From Counter",
+          "From Free Kick",
+          "From Goal Kick",
+          "From Keeper",
+          "From Kick Off",
+          "From Throw In",
+          "Other",
+          "Regular Play"
+        ]
+      },
+      "technique": {
+        "missing": 0,
+        "values": [
+          "Backheel",
+          "Diving Header",
+          "Half Volley",
+          "Lob",
+          "Normal",
+          "Overhead Kick",
+          "Volley"
+        ]
+      }
+    },
+    "test": {
+      "body_part": {
+        "missing": 0,
+        "values": [
+          "Head",
+          "Left Foot",
+          "Other",
+          "Right Foot"
+        ]
+      },
+      "shot_type": {
+        "missing": 0,
+        "values": [
+          "Corner",
+          "Free Kick",
+          "Open Play"
+        ]
+      },
+      "play_pattern": {
+        "missing": 0,
+        "values": [
+          "From Corner",
+          "From Counter",
+          "From Free Kick",
+          "From Goal Kick",
+          "From Keeper",
+          "From Kick Off",
+          "From Throw In",
+          "Other",
+          "Regular Play"
+        ]
+      },
+      "technique": {
+        "missing": 0,
+        "values": [
+          "Backheel",
+          "Diving Header",
+          "Half Volley",
+          "Lob",
+          "Normal",
+          "Overhead Kick",
+          "Volley"
+        ]
+      }
+    }
+  },
+  "fitted_context_categories": {
+    "body_part": [
+      "Head",
+      "Left Foot",
+      "Other",
+      "Right Foot"
+    ],
+    "shot_type": [
+      "Corner",
+      "Free Kick",
+      "Open Play"
+    ],
+    "play_pattern": [
+      "From Corner",
+      "From Counter",
+      "From Free Kick",
+      "From Goal Kick",
+      "From Keeper",
+      "From Kick Off",
+      "From Throw In",
+      "Other",
+      "Regular Play"
+    ],
+    "technique": [
+      "Backheel",
+      "Diving Header",
+      "Half Volley",
+      "Lob",
+      "Normal",
+      "Overhead Kick",
+      "Volley"
+    ]
+  }
+}
