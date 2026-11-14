@@ -1,4 +1,6 @@
-# xG AI Project — Week 2 pilot, Week 3 baseline and Week 4 models
+# xG AI Project — pilot, baseline, model improvement and Streamlit integration
+
+Week 5 interactive app, run/deployment commands and integration report: [week5/README.md](week5/README.md) and [week5/REPORT.md](week5/REPORT.md). Supports direct pitch selection and numeric shot input using the saved Week 4 model.
 
 Week 3 implementation and commands: [week3/README.md](week3/README.md). It runs separately and preserves the original Week 2 outputs below.
 

@@ -11,3 +11,9 @@ raw/
 .DS_Store
 Thumbs.db
 week3/data/matches_*.json
+seed-notes.txt
+.impeccable/build/
+.impeccable/questions/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/direction-options.json
