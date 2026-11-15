@@ -2,6 +2,8 @@
 
 The Streamlit app uses the **committed Week 4 contextual Logistic Regression** artifact. It supports both numeric coordinates and direct pitch selection, explains xG, exports a JSON estimate, and exposes the recorded model comparisons. It performs inference, not training.
 
+Deployed app: [xG studio](https://phuc-hung-xg-studio.streamlit.app/). Python 3.11. PyArrow is pinned to the 24.0.0 version selected by the Community Cloud compatibility check during deployment.
+
 ## Run locally (PowerShell)
 
 From the repository root, with Python 3.11 installed:
