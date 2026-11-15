@@ -4,6 +4,8 @@ The Streamlit app uses the **committed Week 4 contextual Logistic Regression** a
 
 Deployed app: [xG studio](https://phuc-hung-xg-studio.streamlit.app/). Python 3.11. PyArrow is pinned to the 24.0.0 version selected by the Community Cloud compatibility check during deployment.
 
+Public viewer access was enabled at the owner's request and verified without signing in. The GitHub repository remains private. See [verification record](VERIFICATION.md).
+
 ## Run locally (PowerShell)
 
 From the repository root, with Python 3.11 installed:
