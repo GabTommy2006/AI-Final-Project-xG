@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T11:10:55.354293+00:00",
+  "title": "Design System: xG studio",
+  "extensions": {
+    "colorMeta": {
+      "pine": {
+        "displayName": "Pine",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0138 164)",
+          "oklch(26% 0.0358 164)",
+          "oklch(38% 0.0495 164)",
+          "oklch(50% 0.0550 164)",
+          "oklch(62% 0.0550 164)",
+          "oklch(74% 0.0440 164)",
+          "oklch(86% 0.0275 164)",
+          "oklch(95% 0.0110 164)"
+        ]
+      },
+      "ivory": {
+        "displayName": "Warm Ivory",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0020 100)",
+          "oklch(26% 0.0052 100)",
+          "oklch(38% 0.0072 100)",
+          "oklch(50% 0.0080 100)",
+          "oklch(62% 0.0080 100)",
+          "oklch(74% 0.0064 100)",
+          "oklch(86% 0.0040 100)",
+          "oklch(95% 0.0016 100)"
+        ]
+      },
+      "ink": {
+        "displayName": "Pine Ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0100 160)",
+          "oklch(26% 0.0260 160)",
+          "oklch(38% 0.0360 160)",
+          "oklch(50% 0.0400 160)",
+          "oklch(62% 0.0400 160)",
+          "oklch(74% 0.0320 160)",
+          "oklch(86% 0.0200 160)",
+          "oklch(95% 0.0080 160)"
+        ]
+      },
+      "caption": {
+        "displayName": "Caption Green",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0075 150)",
+          "oklch(26% 0.0195 150)",
+          "oklch(38% 0.0270 150)",
+          "oklch(50% 0.0300 150)",
+          "oklch(62% 0.0300 150)",
+          "oklch(74% 0.0240 150)",
+          "oklch(86% 0.0150 150)",
+          "oklch(95% 0.0060 150)"
+        ]
+      },
+      "field": {
+        "displayName": "Field Grey-Green",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0030 120)",
+          "oklch(26% 0.0078 120)",
+          "oklch(38% 0.0108 120)",
+          "oklch(50% 0.0120 120)",
+          "oklch(62% 0.0120 120)",
+          "oklch(74% 0.0096 120)",
+          "oklch(86% 0.0060 120)",
+          "oklch(95% 0.0024 120)"
+        ]
+      },
+      "lime": {
+        "displayName": "Selected Lime",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0300 120)",
+          "oklch(26% 0.0780 120)",
+          "oklch(38% 0.1080 120)",
+          "oklch(50% 0.1200 120)",
+          "oklch(62% 0.1200 120)",
+          "oklch(74% 0.0960 120)",
+          "oklch(86% 0.0600 120)",
+          "oklch(95% 0.0240 120)"
+        ]
+      },
+      "focus": {
+        "displayName": "Focus Olive",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0250 125)",
+          "oklch(26% 0.0650 125)",
+          "oklch(38% 0.0900 125)",
+          "oklch(50% 0.1000 125)",
+          "oklch(62% 0.1000 125)",
+          "oklch(74% 0.0800 125)",
+          "oklch(86% 0.0500 125)",
+          "oklch(95% 0.0200 125)"
+        ]
+      },
+      "pitch-line": {
+        "displayName": "Pitch Line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0063 155)",
+          "oklch(26% 0.0163 155)",
+          "oklch(38% 0.0225 155)",
+          "oklch(50% 0.0250 155)",
+          "oklch(62% 0.0250 155)",
+          "oklch(74% 0.0200 155)",
+          "oklch(86% 0.0125 155)",
+          "oklch(95% 0.0050 155)"
+        ]
+      },
+      "inverse-muted": {
+        "displayName": "Inverse Muted",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0050 145)",
+          "oklch(26% 0.0130 145)",
+          "oklch(38% 0.0180 145)",
+          "oklch(50% 0.0200 145)",
+          "oklch(62% 0.0200 145)",
+          "oklch(74% 0.0160 145)",
+          "oklch(86% 0.0100 145)",
+          "oklch(95% 0.0040 145)"
+        ]
+      },
+      "divider": {
+        "displayName": "Divider Green",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0037 145)",
+          "oklch(26% 0.0097 145)",
+          "oklch(38% 0.0135 145)",
+          "oklch(50% 0.0150 145)",
+          "oklch(62% 0.0150 145)",
+          "oklch(74% 0.0120 145)",
+          "oklch(86% 0.0075 145)",
+          "oklch(95% 0.0030 145)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Page title",
+        "purpose": "Main page heading."
+      },
+      "result": {
+        "displayName": "Probability",
+        "purpose": "Changing xG percentage with tabular numerals."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "custom-mobile",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Identity band",
+      "kind": "custom",
+      "refersTo": "brand-band",
+      "description": "Implemented custom identity band.",
+      "html": "<div class=\"ds-brand\"><strong>xG studio</strong><span>A closer look at chance quality</span></div>",
+      "css": ".ds-brand{display:flex;justify-content:space-between;align-items:center;background:#123D34;color:#F5F5EF;padding:1rem 1.25rem;border-radius:12px;font-family:Manrope,sans-serif;}.ds-brand strong{font-size:1.4rem;letter-spacing:-.03em}.ds-brand span{font-size:.85rem;color:#D8E6DB;max-width:135px;text-align:right}"
+    },
+    {
+      "name": "Probability row",
+      "kind": "custom",
+      "refersTo": "probability",
+      "description": "Textual result with tabular figures and baseline alignment.",
+      "html": "<div class=\"ds-result\"><strong>28.85%</strong><span>expected goals · 0.288 xG</span></div>",
+      "css": ".ds-result{display:flex;align-items:baseline;gap:1rem;margin-top:1rem;border-bottom:1px solid #BECBBF;padding-bottom:1rem;color:#183B33;font-family:Manrope,sans-serif;}.ds-result strong{font-size:3.4rem;font-weight:650;letter-spacing:-.035em;font-variant-numeric:tabular-nums}.ds-result span{font-size:1rem}"
+    },
+    {
+      "name": "Pitch position",
+      "kind": "custom",
+      "refersTo": "pitch",
+      "description": "Static specimen of implemented geometry; the shipped Streamlit component adds pointer and arrow-key updates.",
+      "html": "<svg class=\"ds-pitch\" viewBox=\"-4 -4 128 88\" tabindex=\"0\" role=\"img\" aria-label=\"Shot position specimen\"><rect x=\"-4\" y=\"-4\" width=\"128\" height=\"88\" rx=\"3\" fill=\"#123D34\"/><g fill=\"none\" stroke=\"#A9C2B5\" stroke-width=\".35\"><rect width=\"120\" height=\"80\"/><path d=\"M60 0V80 M0 18H18V62H0 M120 18H102V62H120\"/><circle cx=\"60\" cy=\"40\" r=\"9.15\"/></g><polygon points=\"108,40 120,36 120,44\" fill=\"#D6F285\" fill-opacity=\".2\" stroke=\"#D6F285\" stroke-width=\".35\"/><circle cx=\"108\" cy=\"40\" r=\"1.6\" fill=\"#D6F285\" stroke=\"#123D34\" stroke-width=\".5\"/></svg>",
+      "css": ".ds-pitch{display:block;width:100%;height:auto;cursor:crosshair;touch-action:none;border-radius:12px}.ds-pitch:focus-visible{outline:3px solid #618522;outline-offset:3px}"
+    },
+    {
+      "name": "Coordinate field",
+      "kind": "input",
+      "description": "Theme-only specimen of the native coordinate input; native Streamlit chrome remains framework owned.",
+      "html": "<label class=\"ds-label\">Position x <input class=\"ds-input\" type=\"number\" min=\"0\" max=\"120\" value=\"108\"/></label>",
+      "css": ".ds-label{color:#183B33;font-family:Manrope,sans-serif;}.ds-input{display:block;background:#E8ECE5;color:#183B33;font-variant-numeric:tabular-nums;font-family:Manrope,sans-serif;}.ds-input:focus-visible{outline-color:#618522}.ds-input::selection{background:#D6F285;color:#123D34}"
+    },
+    {
+      "name": "Reset action",
+      "kind": "button",
+      "description": "Theme-only specimen of the native reset action, without claiming Streamlit internal metrics as app tokens.",
+      "html": "<button class=\"ds-reset\" type=\"button\">Reset example</button>",
+      "css": ".ds-reset{color:#183B33;font-family:Manrope,sans-serif;}.ds-reset:focus-visible{outline-color:#618522}.ds-reset::selection{background:#D6F285;color:#123D34}"
+    },
+    {
+      "name": "Page navigation",
+      "kind": "nav",
+      "description": "Semantic specimen of native three-option navigation; the app uses Streamlit segmented_control.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navigation\"><button aria-current=\"page\">Shot explorer</button><button>Model evidence</button><button>Project guide</button></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;font-family:Manrope,sans-serif;}.ds-nav button{font-family:Manrope,sans-serif;color:#183B33}.ds-nav button[aria-current]{color:#123D34}.ds-nav button:focus-visible{outline-color:#618522}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Club editorial",
+    "overview": "A quiet football analysis workspace with a dark pitch, readable probability and ordinary working controls. Manrope, pine and warm ivory connect the working screen to football annual reporting without adding ornamental dashboard furniture.\n\nThis is the system extracted from the implemented code and desktop/mobile captures. The direction remains a reversible styling assumption under delegated design work; neither user visual approval nor comp approval is recorded. Direction reference: seed:3f307c94f370302f.",
+    "keyCharacteristics": [
+      "Pine identity and pitch surfaces on warm ivory.",
+      "A single sans-serif family with strong numerical hierarchy.",
+      "Native Streamlit controls and navigation.",
+      "Flat surfaces and restrained lime shot geometry."
+    ],
+    "rules": [
+      {
+        "name": "The Selected Geometry Rule",
+        "body": "Lime identifies position and geometry; keep ordinary controls within the pine theme.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stable Figures Rule",
+        "body": "Use tabular numerals for coordinate inputs and the headline probability.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Use color fields and fine boundaries for the documented custom surfaces.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** retain Manrope across the interface and pitch labels.",
+      "**Do** keep explanatory captions at full opacity.",
+      "**Do** preserve both numeric and direct pitch position input.",
+      "**Do** keep probability interpretation adjacent to the result."
+    ],
+    "donts": [
+      "**Don't** replace native widget behavior with decorative control imitations.",
+      "**Don't** turn lime into a general background for working controls.",
+      "**Don't** infer visual approval from this implementation record."
+    ]
+  }
+}
